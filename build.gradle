@@ -1,12 +1,43 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'com.hcgstudio'
-version '1.0-SNAPSHOT'
+version '0.1.0'
 
 repositories {
     mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'JImprove'
+                description = 'A library to add features to Java.'
+                url = 'https://github.com/HCGStudio/JImprove'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'mahoshojoHCG'
+                        name = 'Yin Zhaoyu'
+                        email = 'hcg@hcg.today'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/HCGStudio/JImprove.git'
+                    developerConnection = 'scm:git:ssh://github.com/HCGStudio/JImprove.git'
+                    url = 'https://github.com/HCGStudio/JImprove'
+                }
+            }
+        }
+    }
 }
 
 dependencies {
