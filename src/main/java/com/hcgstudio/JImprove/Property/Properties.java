@@ -63,7 +63,7 @@ public class Properties
      * @param <T> 属性的类型
      * @return 如果两个属性的值相同，则返回真
      */
-    public <T> boolean equals(ReadOnlyProperty<T> a, ReadOnlyProperty<T> b)
+    public static <T> boolean equals(ReadOnlyProperty<T> a, ReadOnlyProperty<T> b)
     {
         return a.get().equals(b.get());
     }
@@ -73,7 +73,7 @@ public class Properties
      * @param <T> 类型
      * @return 构造的属性
      */
-    public <T> Property<T> ofDefault()
+    public static <T> Property<T> ofDefault()
     {
         return new AutoProperty<>(null);
     }
