@@ -1,6 +1,10 @@
-package com.hcgstudio.JImprove;
+package com.hcgstudio.JImprove.Property;
 
-public class HalfAutoProperty<T> implements ReadOnlyProperty<T>
+/**
+ * 半自动属性，用于构建自定义访问级别的属性
+ * @param <T> 属性的类型
+ */
+public abstract class HalfAutoProperty<T> implements ReadOnlyProperty<T>
 {
     private T value;
 
