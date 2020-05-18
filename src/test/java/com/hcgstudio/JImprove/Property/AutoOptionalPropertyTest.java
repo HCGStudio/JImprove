@@ -18,7 +18,6 @@ class AutoOptionalPropertyTest
     @Test
     void set()
     {
-        assertThrows(IllegalArgumentException.class,() -> property.set(null));
         property.set("test2");
         assertEquals("test2", property.get());
     }
