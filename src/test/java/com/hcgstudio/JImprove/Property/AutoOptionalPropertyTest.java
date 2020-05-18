@@ -25,9 +25,9 @@ class AutoOptionalPropertyTest
     @Test
     void setNullable()
     {
-        assertTrue(property.IsPresent().get());
-        assertDoesNotThrow(() ->property.setNullable(null));
-        assertFalse(property.IsPresent().get());
+        assertTrue(property.IsPresent());
+        assertDoesNotThrow(() -> property.setNullable(null));
+        assertFalse(property.IsPresent());
     }
 
     @Test
@@ -40,5 +40,12 @@ class AutoOptionalPropertyTest
     void testEquals()
     {
         assertEquals(Properties.of("test"), property);
+    }
+
+    @Test
+    void testOfNullable()
+    {
+        property = Properties.ofNullable(null);
+        assertFalse(property.IsPresent());
     }
 }

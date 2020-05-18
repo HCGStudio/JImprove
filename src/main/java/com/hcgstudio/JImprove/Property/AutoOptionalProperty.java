@@ -10,16 +10,15 @@ import java.util.Objects;
 class AutoOptionalProperty<T> implements OptionalProperty<T>
 {
     protected T value;
+
     @Override
-    public ReadOnlyProperty<Boolean> IsPresent()
+    public boolean IsPresent()
     {
-        return () -> value != null;
+        return value != null;
     }
 
     AutoOptionalProperty(T value)
     {
-        if (value == null)
-            throw new NullPointerException();
         this.value = value;
     }
 

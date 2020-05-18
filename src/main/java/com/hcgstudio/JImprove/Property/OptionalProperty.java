@@ -9,7 +9,7 @@ public interface OptionalProperty<T> extends Property<T>
     /**
      * 获取当前属性是否有值
      */
-    ReadOnlyProperty<Boolean> IsPresent();
+    boolean IsPresent();
 
     /**
      * 可为Null地设置属性的值

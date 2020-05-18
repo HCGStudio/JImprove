@@ -55,4 +55,26 @@ public class Properties
     {
         return new AutoOptionalProperty<>(value);
     }
+
+    /**
+     * 判读两个属性的值是否相等
+     * @param a 一个属性
+     * @param b 另一个属性
+     * @param <T> 属性的类型
+     * @return 如果两个属性的值相同，则返回真
+     */
+    public <T> boolean equals(ReadOnlyProperty<T> a, ReadOnlyProperty<T> b)
+    {
+        return a.get().equals(b.get());
+    }
+
+    /**
+     * 构造初值为Null的属性
+     * @param <T> 类型
+     * @return 构造的属性
+     */
+    public <T> Property<T> ofDefault()
+    {
+        return new AutoProperty<>(null);
+    }
 }
